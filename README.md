@@ -4,10 +4,7 @@ The Interview Practice App is a responsive web application built using HTML, CSS
 
 This application simulates a real interview environment and improves problem-solving confidence.
 
-🌐 Live Demo
-
-👉 Add your GitHub Pages link here
-Example: https://yourusername.github.io/interview-practice-app/
+🌐 Live Demo:
 
 📌 Features
 
@@ -127,3 +124,4 @@ Your live project link
 
 
 I will customize this README fully for you with correct links and a professional developer profile section 😊
+
