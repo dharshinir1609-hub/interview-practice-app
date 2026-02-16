@@ -117,13 +117,13 @@ Add backend for user login & result history
 
 DHARSHINI
 Frontend Developer
-LinkedIn: (Add your LinkedIn profile link)
-GitHub: (Add your GitHub profile link)
+LinkedIn: (www.linkedin.com/in/dharshini-rajmohan-2862b1395)
+GitHub: (https://github.com/dharshinir1609-hub)
 
 If you give me:
-
-Your GitHub username
+dharshinir1609-hub
 
 Your live project link
+
 
 I will customize this README fully for you with correct links and a professional developer profile section 😊
