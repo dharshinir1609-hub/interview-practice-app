@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Interview Practice App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-layer"></div>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="site-header-inner">
+            <h1 class="site-title">Virtual Interview Practice</h1>
+            <p class="site-tagline">Master HTML, CSS & JavaScript — Practice technical interviews</p>
+            <nav class="auth-nav">
+                <a href="login.html">Login</a>
+                <span class="auth-nav-sep">|</span>
+                <a href="register.html">Register</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- App Header (nav bar) -->
+        <header class="header app-header">
+            <button class="back-btn hidden" id="backBtn" aria-label="Go back">
+                ← Back
+            </button>
+            <span class="logo">Quiz</span>
+            <div class="header-controls">
+                <span class="theme-label">Theme</span>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Category Selection -->
+        <section class="category-section" id="categorySection">
+            <h2>Select Category</h2>
+            <div class="category-buttons">
+                <button class="category-btn" data-category="html">HTML</button>
+                <button class="category-btn" data-category="css">CSS</button>
+                <button class="category-btn" data-category="javascript">JavaScript</button>
+            </div>
+            <div class="difficulty-section">
+                <h3>Difficulty Level</h3>
+                <div class="difficulty-buttons">
+                    <button class="difficulty-btn active" data-difficulty="easy">Easy</button>
+                    <button class="difficulty-btn" data-difficulty="medium">Medium</button>
+                    <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+                </div>
+            </div>
+            <button class="btn btn-start" id="startBtn">Start Quiz</button>
+        </section>
+
+        <!-- Quiz Section -->
+        <section class="quiz-section hidden" id="quizSection">
+            <div class="quiz-header">
+                <div class="score-display">
+                    <span>Score: <strong id="currentScore">0</strong> / <strong id="totalAttempted">0</strong></span>
+                </div>
+                <div class="timer-display">
+                    <span class="timer-label">Time Left</span>
+                    <span class="timer-value" id="timer">60</span>
+                    <span class="timer-unit">s</span>
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+
+            <div class="question-card">
+                <p class="question-number" id="questionNumber">Question 1</p>
+                <p class="question-text" id="questionText"></p>
+            </div>
+
+            <div class="answer-section">
+                <textarea id="answerInput" placeholder="Type your answer here..." rows="6" disabled></textarea>
+                <div class="sample-answer hidden" id="sampleAnswer">
+                    <h4>Sample Answer</h4>
+                    <p id="sampleAnswerText"></p>
+                </div>
+            </div>
+
+            <div class="quiz-buttons">
+                <button class="btn btn-primary" id="submitBtn" disabled>Submit Answer</button>
+                <button class="btn btn-secondary" id="nextBtn" disabled>Next Question</button>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section hidden" id="resultsSection">
+            <div class="results-card">
+                <h2>Quiz Complete!</h2>
+                <p class="motivational-message" id="motivationalMessage"></p>
+                <p class="final-score">Your Score: <strong id="finalScore">0</strong> / <strong id="finalTotal">0</strong></p>
+                <p class="final-percentage" id="finalPercentage">0%</p>
+                <p class="stats-text">Highest Score: <strong id="highestScore">0</strong></p>
+                <p class="stats-text">Last Practice: <strong id="lastPractice">Never</strong></p>
+                <button class="btn btn-primary" id="restartBtn">Start Again</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <p class="footer-text">Practice makes perfect. Keep sharpening your skills!</p>
+            <p class="footer-copyright">&copy; 2025 Virtual Interview Practice. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

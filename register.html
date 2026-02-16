@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Virtual Interview Practice</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-layer"></div>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="site-header-inner">
+            <a href="index.html" class="site-title-link">
+                <h1 class="site-title">Virtual Interview Practice</h1>
+            </a>
+            <p class="site-tagline">Master HTML, CSS & JavaScript — Practice technical interviews</p>
+        </div>
+    </header>
+    
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2 class="auth-title">Create Account</h2>
+            <p class="auth-subtitle">Register to save your progress and track your scores.</p>
+            
+            <form class="auth-form" id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Full Name</label>
+                    <input type="text" id="registerName" name="name" placeholder="Enter your name" required minlength="2">
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" name="password" placeholder="Create a password (min 6 characters)" required minlength="6">
+                </div>
+                <div class="form-group">
+                    <label for="registerConfirmPassword">Confirm Password</label>
+                    <input type="password" id="registerConfirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                </div>
+                <p class="auth-error hidden" id="registerError"></p>
+                <button type="submit" class="btn btn-primary btn-auth">Register</button>
+            </form>
+            
+            <p class="auth-switch">
+                Already have an account? <a href="login.html">Login</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <p class="footer-text">Practice makes perfect. Keep sharpening your skills!</p>
+            <p class="footer-copyright">&copy; 2025 Virtual Interview Practice. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="auth.js"></script>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('registerName').value.trim();
+            const email = document.getElementById('registerEmail').value.trim();
+            const password = document.getElementById('registerPassword').value;
+            const confirmPassword = document.getElementById('registerConfirmPassword').value;
+            const errorEl = document.getElementById('registerError');
+            errorEl.classList.add('hidden');
+            
+            if (password !== confirmPassword) {
+                errorEl.textContent = 'Passwords do not match.';
+                errorEl.classList.remove('hidden');
+                return;
+            }
+            
+            if (password.length < 6) {
+                errorEl.textContent = 'Password must be at least 6 characters.';
+                errorEl.classList.remove('hidden');
+                return;
+            }
+            
+            const result = Auth.register(name, email, password);
+            if (result.success) {
+                window.location.href = 'index.html';
+            } else {
+                errorEl.textContent = result.message || 'Registration failed.';
+                errorEl.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
